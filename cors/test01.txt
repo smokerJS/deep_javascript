@@ -1,0 +1,19 @@
+CORS
+
+동일 출처 정책(same-origin-policy)에 따라 하나의 웹 페이지에서 다른 도메인 서버의 요청을 제한하는 것이다.
+누군가 자신의 웹 서버에서 다른 웹서버의 자원을 빼오려 AJAX 통신을 지속적으로 요청할 때
+요청받는 서버의 과부화나 트래픽이 증가하게 되고 이를 막기 위하여 원칙적으로 타 서버의 접근을 불허한다.
+
+그러나 검증된 도메인 서버의 접근은 제한을 풀어야 하는데 이 때 헤더를 사용하는 방법과 jsonp를 사용하는 방법이 있다.
+
+
+헤더를 사용하는 방법
+response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+response.setHeader("Access-Control-Allow-Origin", "*");
+
+
+jsonp를 사용하는 방법
+<script type="text/javascript" src="http://0000/result.json?callback=parseResponse"></script>
+
+jsonp는 스크립트를 받아와 실행시키는 개념이기 때문에 요청받는 서버쪽에서 별도의 설정이 필요하다.
