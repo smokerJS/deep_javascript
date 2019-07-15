@@ -1,0 +1,2 @@
+Attribute는 HTML 문서에 포함된 변하지 않는 정적 속성 자체를 의미하고,
+Property는 DOM 트리 내부에서 사용되는 Element의 동적 속성을 의미합니다.
